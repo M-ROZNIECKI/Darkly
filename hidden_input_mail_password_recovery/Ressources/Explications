@@ -1,0 +1,13 @@
+En allant sur la page de recuperation de mots de pass,
+on s'appercoit qu'il n'y a qu'un bouton submit et aucun champ a remplir.
+Je decide donc de regarder le code html de la page a cet endroit:
+
+```
+<form action="#" method="POST">
+	<input type="hidden" name="mail" value="webmaster@borntosec.com" maxlength="15">
+	<input type="submit" name="Submit" value="Submit">
+</form>
+```
+
+Il y a un champ cacher appeler mail. il suffis donc de changer sa valeur et donc de recuperer le mail de recuperation de mots de pass.
+Un moyen de s'en proteger serais de definir ce mail en backend dans la fonction qui va envoyer le mail et ainsi eviter ce probleme.
