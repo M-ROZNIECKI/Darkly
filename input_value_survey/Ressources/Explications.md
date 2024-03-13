@@ -1,6 +1,6 @@
-En allant sur la page survey, on as un formulaire avec un vote qui nous est demander.
+En allant sur la page survey, on a un formulaire avec un vote qui nous est demandé.
 
-En regardant le formulaire, on observe ca:
+En regardant le formulaire, on observe ça :
 
 ```html
 <form action="#" method="post">
@@ -20,8 +20,8 @@ En regardant le formulaire, on observe ca:
 </form>
 ```
 
-On as tester de modifier la valeur d'une des options pour faire un vote d'une valeur exorbitante et voir si ca prenais en compte le vote.
+On a testé de modifier la valeur d'une des options pour faire un vote d'une valeur exorbitante et voir si ça prenait en compte le vote.
 
-Bingo on obtient un flag et notre vote est pris en compte.
+Bingo, on obtient un flag et notre vote est pris en compte.
 
-Pour eviter de ce trouver avec ce genre de probleme et potentiellement un vote/questionnaire truquer, il faut rajouter une verification en back end que l'option choisi fait bien parti des options possible.
+Pour éviter de se trouver avec ce genre de problème et potentiellement un vote/questionnaire truquer, il faut rajouter une vérification en backend que l'option choisie fait bien partie des options possibles.

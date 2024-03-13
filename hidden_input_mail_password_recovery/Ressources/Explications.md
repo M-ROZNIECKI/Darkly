@@ -1,5 +1,5 @@
-En allant sur la page de recuperation de mots de pass, on s'appercoit qu'il n'y a qu'un bouton submit et aucun champ a remplir.  
-Je decide donc de regarder le code html de la page a cet endroit:
+En allant sur la page de récupération de mots de pass, on s'aperçoit qu'il n'y a qu'un bouton submit et aucun champ à remplir.  
+Je décide donc de regarder le code HTML de la page à cet endroit :
 
 ```
 <form action="#" method="POST">
@@ -8,15 +8,15 @@ Je decide donc de regarder le code html de la page a cet endroit:
 </form>
 ```
 
-Il y a un champ cacher appeler mail.
+Il y a un champ caché appelé 'mail'.
 
-Il suffis donc de changer sa valeu pour que le mail de recuperation arrive ailleur.
+Il suffit donc de changer sa valeur pour que le mail de récupération arrive ailleurs.
 
-Ainsi, on peut exploiter cela de deux maniere possible:
+Ainsi, on peut exploiter cela de deux manières possibles :
 
-1. recevoir le mail de recuperation de mots de pass a la place de l'adress mail d'origine.  
-Cela nous permet de forger un faux mail de recovery a envoyer a la bonne adress
+1. recevoir le mail de récupération de mots de pass a la place de l'adresse mail d'origine.  
+Cela nous permet de forger un faux mail de recovery à envoyer à la bonne adresse
 
-2. spammer un envois de mail vers d'autres personnes via se formulaire.
+2. spammer des envois de mail vers d'autres personnes via ce formulaire.
 
-Un moyen de s'en proteger serais de definir ce mail en backend dans la fonction qui va envoyer le mail et ainsi eviter ces deux problemes.
+Un moyen de s'en protéger serait de définir ce mail en backend dans la fonction qui va envoyer le mail et ainsi éviter ces deux problèmes.
