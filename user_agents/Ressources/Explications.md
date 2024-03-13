@@ -11,13 +11,14 @@ Dans le cadre de notre analyse de sécurité  une vulnérabilité a été identi
 ### Indice dans les Commentaires:
 - Des indices ont été trouvés dans les commentaires HTML de la page, suggérant une manipulation d'ou on doit provenir et du browser utiliser.
 
-images
+![HTML comment](screenshot/1.png)
 
 ### Utilisation de Burp Suite:
-- L'outil Burp Suite a été utilisé pour intercepter et modifier la requête HTTP vers la page vulnérable.
-- **Modification de `User-Agent`** : L'en-tête `User-Agent` a été modifié pour contenir la valeur `ft_bornToSec`, simulant ainsi un navigateur spécifique.
-- **Modification de `Referer`** : L'en-tête `Referer` a été modifié pour indiquer que la requête provenait de `https://www.nsa.gov/`, simulant une visite préalable à ce site.
+- L'outil **Burp Suite** a été utilisé pour intercepter et modifier la requête HTTP vers la page vulnérable.
+- **Modification de User-Agent** : L'en-tête `User-Agent` a été modifié pour contenir la valeur `ft_bornToSec`, simulant ainsi un navigateur spécifique.
+- **Modification de Referer** : L'en-tête `Referer` a été modifié pour indiquer que la requête provenait de `https://www.nsa.gov/`, simulant une visite préalable à ce site.
 
+![Burp](screenshot/2.png)
 
 ## Impact Potentiel
 Cette vulnérabilité peut permettre à un attaquant de bypasser les contrôles de sécurité basés sur les en-têtes HTTP `User-Agent` et `Referer`, menant potentiellement à des fuites d'informations, des accès non autorisés, ou d'autres impacts selon le contexte de l'application.

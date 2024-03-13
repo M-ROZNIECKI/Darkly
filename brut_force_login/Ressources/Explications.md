@@ -41,5 +41,6 @@ Pour améliorer la sécurité contre de telles attaques, nous recommandons :
 
 - **Introduction de CAPTCHA** : Un CAPTCHA peut efficacement freiner les attaques automatisées, en obligeant à une interaction humaine.
 - **Politiques de Mot de Passe Robustes** : Encourager les utilisateurs à créer des mots de passe forts et uniques pour réduire la probabilité de succès des attaques par brut-force.
+- **Mise en place de service tiers** : L'installation et la configuration de service comme **fail2ban** ou **CrowdSec** qui analyse les logs pour ban les IP malveillantes.
 
 L'analyse des tentatives échouées et réussies offre une vision complète du processus d'attaque et souligne l'importance de la persévérance et de l'adaptation dans les tests de sécurité.

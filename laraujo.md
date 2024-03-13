@@ -83,7 +83,7 @@ Apres de multiple tentative de brut-force en utilisant des combnaison de liste p
 
 flag:B3A6E43DDF8B4BBB4125E5E7D23040433827759D4DE1C04EA63907479A80A6B2 -->
 
-## payload src
+<!-- ## payload src
 
 13/03/2024
 
@@ -111,4 +111,4 @@ ce qui donne :
 `http://10.13.200.24/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4=`
 
 
-flag: `928D819FC19405AE09921A2B71227BD9ABA106F9D2D37AC412E9E5A750F1506D`
+flag: `928D819FC19405AE09921A2B71227BD9ABA106F9D2D37AC412E9E5A750F1506D` -->
