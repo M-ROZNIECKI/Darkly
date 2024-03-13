@@ -1,25 +1,25 @@
-Sur la page qui permet de chercher une image via son numero,  
-on s'apercoit que l'ont peut faire de l'injection sql dans le champ de recherche.
+Sur la page qui permet de chercher une image via son numéro,  
+on s'aperçoit que l'on peut faire de l'injection SQL dans le champ de recherche.
 
 ![1](screenshot/1.png "1")
 
 ![2](screenshot/2.png "2")
 
-on vas donc pourvoir recuperer les differentes colones et tables qui composent cette base de donnee avec cette requete dans le champ de recherche :
+On va donc pouvoir récupérer les différentes colonnes et tables qui composent cette base de donnée avec cette requête dans le champ de recherche :
 
 `1 union SELECT column_name, table_name FROM information_schema.columns`
 
-je vais vous epargner les differentes requetes pour parcourir les differentes colonnes et seulement mettre la requetes qui a permis de recuperer quelque chose d'interessant :
+Je vais vous épargner les différentes requêtes pour parcourir les différentes colonnes et seulement mettre la requête qui a permis de récupérer quelque chose d'intéressant :
 
 `1 union SELECT title, comment FROM list_images`
 
 ![3](screenshot/3.png "3")
 
-Pour le dernier resultat nous obtenon un hash et des instruction pour trouver le flag.
+Pour le dernier résultat, nous obtenons un hash et des instructions pour trouver le flag.
 
-Apres decryptage en md5 du hash, on obtient : albatroz
-Plus qu'a passer le tout en lowercase puis de le sh256
+Après décryptage en md5 du hash, on obtient : albatroz
+Plus qu'à passer le tout en lowercase puis de le sh256
 
-Ca y est on as le flag
+Ça y est, on a le flag
 
-Pour ce proteger de ce genre de faille, on peut sanitize ce que l'on resoit dans le backend et par exemple dans le cas precis, refuser si on recoit autre chose que ce qui est attendu, un nombre
+Pour se protéger de ce genre de faille, on peut sanitize ce que l'on reçoit dans le backend et, par exemple dans le cas précis, refuser si on reçoit autre chose que ce qui est attendu, un nombre.
