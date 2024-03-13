@@ -1,6 +1,6 @@
-# Source :
+<!-- # Source : -->
 
-## Pist1
+<!-- ## Pist1
 
 https://book.hacktricks.xyz/pentesting-web/login-bypass
 
@@ -11,7 +11,7 @@ https://www.beyondsecurity.com/resources/vulnerabilities/autocomplete-not-disabl
 
 ## PIST2
 
-`X-Powered-By: PHP/5.5.9-1ubuntu4.29`
+`X-Powered-By: PHP/5.5.9-1ubuntu4.29` -->
 
 <!-- ## Exploitation Upload file:
 21/02/2024
@@ -82,3 +82,33 @@ Apres de multiple tentative de brut-force en utilisant des combnaison de liste p
 `hydra -l marvin -P /home/ar_ruc/Téléchargements/rockyou.txt 10.13.200.24 http-get-form "/index.php:page=signin&username=^USER^&password=^PASS^&Login=Login#:images/WrongAnswer.gif"`
 
 flag:B3A6E43DDF8B4BBB4125E5E7D23040433827759D4DE1C04EA63907479A80A6B2 -->
+
+## payload src
+
+13/03/2024
+
+j'ai remarquer que sur la page d'accueil il existait une image clicable qui nous rendait a l'url suivant :
+
+`http://10.13.200.24/?page=media&src=nsa`
+
+Une vulnerabilier a ete reveler par le fait que src est mal proteger j'ai d'abbord reussie a avoir un autre contenu stoker en local initialment prevu de : `<object data="http://10.13.200.24/images/nsa_prism.jpg"></object>`
+
+par :
+`index.php`
+
+ce qui permetais d'avoir tous le site fonctionel dans la balise :
+
+[image]
+
+Le but etais donc desormai d'executer mon propre code a cette endroit j'ai donc utiliser la syntaxe `data:` qui permet d'insérer des petites ressources directement dans la requête web, sans avoir besoin de faire appel à un fichier externe.
+
+apres avoir tester de multiple payload j'ai encoder en base64 a l'aide de 'l'encodeur en ligne suivant : `https://www.base64encode.net/file-to-base64` le script suivant : `<script>alert("XSS")</script>` ce qui donne : `PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4`
+
+pour l'interpreter correctement il faut utiliser le mediatype suivant : `text/html`
+
+ce qui donne :
+
+`http://10.13.200.24/?page=media&src=data:text/html;base64,PHNjcmlwdD5hbGVydCgiWFNTIik8L3NjcmlwdD4=`
+
+
+flag: `928D819FC19405AE09921A2B71227BD9ABA106F9D2D37AC412E9E5A750F1506D`
